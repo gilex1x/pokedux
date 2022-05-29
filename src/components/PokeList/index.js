@@ -8,9 +8,9 @@ const PokeList = () => {
   const pokemons = useSelector((state) => state.list);
 
   return (
-    <Grid>
-      {pokemons.map((pokemon) => (
-        <PokemonCard pokemon={pokemon} />
+    <Grid textAlign='center'>
+      {pokemons.map((pokemon, index) => (
+        <PokemonCard pokemon={pokemon} key={index} />
       ))}
     </Grid>
   );
