@@ -1,12 +1,14 @@
 import React, { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import PokeList from "../../components/PokeList";
 import Searcher from "../../components/Searcher";
+import Loader from "../../components/Loader";
 import { fetchPokemons } from "../../redux/actions";
 
 import "./styles.css";
 
-function Home() {
+const Home = () => {
+  const list = useSelector((state) => state.list);
   const dispatch = useDispatch();
   const fetchData = () => {
     dispatch(fetchPokemons());
@@ -17,9 +19,9 @@ function Home() {
   return (
     <div className='Home'>
       <Searcher />
-      <PokeList />
+      {list.length >= 1 ? <PokeList /> : <Loader />}
     </div>
   );
-}
+};
 
 export default Home;
