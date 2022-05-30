@@ -10,8 +10,7 @@ import pokemonReducer from "./redux/reducers/pokemonReducer";
 import pokemonSaga from "./redux/sagas";
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();
-const composedEnhacers = applyMiddleware(sagaMiddleware)
-);
+const composedEnhacers = composeAlt(applyMiddleware(sagaMiddleware));
 
 const store = createStore(pokemonReducer, composedEnhacers);
 sagaMiddleware.run(pokemonSaga);
