@@ -7,7 +7,6 @@ import { Provider } from "react-redux";
 import App from "./containers/App";
 import "./index.css";
 import pokemonReducer from "./redux/reducers/pokemonReducer";
-import thunk from "redux-thunk";
 import { logActions } from "./middlewares";
 import pokemonSaga from "./redux/sagas";
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;

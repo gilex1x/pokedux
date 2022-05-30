@@ -8,8 +8,11 @@ import "./styles.css";
 
 function Home() {
   const dispatch = useDispatch();
-  useEffect(() => {
+  const fetchData = () => {
     dispatch(fetchPokemons());
+  };
+  useEffect(() => {
+    fetchData(); // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
   return (
     <div className='Home'>

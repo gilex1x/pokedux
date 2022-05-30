@@ -1,11 +1,4 @@
-//Las funciones de aca son los actions creatorr.
-import { getLimitedPokemons } from "../../api";
-import {
-  FETCH_POKEMONS,
-  GET_POKEMONS_DATA,
-  SET_ERROR,
-  SET_POKEMONS,
-} from "./types";
+import { FETCH_POKEMONS, SET_ERROR, SET_POKEMONS } from "./types";
 export const setPokemon = (payload) => ({
   type: SET_POKEMONS,
   payload: payload,
