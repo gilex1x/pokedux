@@ -41,7 +41,7 @@ const pokemonReducer = (state = initialState, action) => {
     case DELETE_FAVORITE:
       return {
         ...state,
-        favorites: state.favorites.filter((id) => id !== action.payload),
+        favorites: state.favorites.filter((pokemon) => pokemon.id !== action.payload),
       };
     default:
       return {

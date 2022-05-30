@@ -8,9 +8,9 @@ export const fetchPokemons = () => ({
   type: FETCH_POKEMONS,
 });
 
-export const setFavorite = (id) => ({
+export const setFavorite = (pokemon) => ({
   type: SET_FAVORITE,
-  payload: id,
+  payload: pokemon,
 });
 export const deleteFavorite = (id) => ({
   type: DELETE_FAVORITE,

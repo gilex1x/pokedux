@@ -16,7 +16,7 @@ const PokemonCard = (props) => {
     if (isFavorite) {
       dispatch(deleteFavorite(pokemon.id));
     } else {
-      dispatch(setFavorite(pokemon.id));
+      dispatch(setFavorite(pokemon));
     }
   };
   return (

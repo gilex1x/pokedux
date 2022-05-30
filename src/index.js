@@ -7,12 +7,10 @@ import { Provider } from "react-redux";
 import App from "./containers/App";
 import "./index.css";
 import pokemonReducer from "./redux/reducers/pokemonReducer";
-import { logActions } from "./middlewares";
 import pokemonSaga from "./redux/sagas";
 const composeAlt = window.__REDUX_DEVTOOLS_EXTENSION__COMPOSE__ || compose;
 const sagaMiddleware = createSagaMiddleware();
-const composedEnhacers = composeAlt(
-  applyMiddleware(sagaMiddleware, logActions)
+const composedEnhacers = applyMiddleware(sagaMiddleware)
 );
 
 const store = createStore(pokemonReducer, composedEnhacers);
