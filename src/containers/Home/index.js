@@ -8,7 +8,7 @@ import { fetchPokemons } from "../../redux/actions";
 import "./styles.css";
 
 const Home = () => {
-  const list = useSelector((state) => state.list);
+  const isLoading = useSelector((state) => state.isLoading);
   const dispatch = useDispatch();
   const fetchData = () => {
     dispatch(fetchPokemons());
@@ -19,7 +19,7 @@ const Home = () => {
   return (
     <div className='Home'>
       <Searcher />
-      {list.length >= 1 ? <PokeList /> : <Loader />}
+      {!isLoading ? <PokeList /> : <Loader />}
     </div>
   );
 };
