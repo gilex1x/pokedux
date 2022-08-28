@@ -1,14 +1,16 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
+import { fetchPokemons } from "../../redux/actions";
 import PokeList from "../../components/PokeList";
+import PokemonCard from "../../components/PokeList/PokemonCard";
 import Searcher from "../../components/Searcher";
 import Loader from "../../components/Loader";
-import { fetchPokemons } from "../../redux/actions";
 
 import "./styles.css";
 
 const Home = () => {
   const isLoading = useSelector((state) => state.isLoading);
+  const pokemons = useSelector((state) => state.list);
   const dispatch = useDispatch();
   const fetchData = () => {
     dispatch(fetchPokemons());
@@ -19,7 +21,15 @@ const Home = () => {
   return (
     <div className='Home'>
       <Searcher />
-      {!isLoading ? <PokeList /> : <Loader />}
+      {!isLoading ? (
+        <PokeList>
+          {pokemons.map((pokemon, index) => (
+            <PokemonCard pokemon={pokemon} key={index} />
+          ))}
+        </PokeList>
+      ) : (
+        <Loader />
+      )}
     </div>
   );
 };

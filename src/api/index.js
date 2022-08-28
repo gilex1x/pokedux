@@ -5,8 +5,8 @@ export const getLimitedPokemons = () => {
   return fetch(`${URL}pokemon?limit=${LIMIT}`);
 };
 
-export const getPokemonById =(id) => {
-   return fetch(`${URL}pokemon/${id}`);
+export const getPokemonById = (id) => {
+  return fetch(`${URL}pokemon/${id}`);
 };
 
 export const getPokemonsDetails = async () => {
@@ -16,7 +16,7 @@ export const getPokemonsDetails = async () => {
     const result = await Promise.all(pkmns.map((pkmn) => fetch(pkmn.url)));
     const pokemonsData = await Promise.all(result.map((pkmn) => pkmn.json()));
     //console.log(pokemonsData)
-    return pokemonsData
+    return pokemonsData;
     //dispatch(setPokemon(pokemonsData));
   } catch (err) {
     console.log({ message: "Ocurrió un error", err });

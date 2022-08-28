@@ -6,7 +6,7 @@ import { setPokemon } from "../actions";
 function* fetchPokemonData(action){
   console.log(action)
   try {
-    const pokemonData=yield call(getPokemonById,action.id)
+    const pokemonData=yield call(getPokemonById,action.payload)
     console.log(pokemonData)
   } catch (error) {
     console.error(error)

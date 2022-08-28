@@ -1,22 +1,22 @@
-import { FETCH_POKEMONS, SET_ERROR, SET_POKEMONS, SET_FAVORITE, DELETE_FAVORITE } from "./types";
+import * as types from "./types";
 export const setPokemon = (payload) => ({
-  type: SET_POKEMONS,
+  type: types.SET_POKEMONS,
   payload: payload,
 });
 //cons reduxthunk, esta action, devuelve otra función
 export const fetchPokemons = () => ({
-  type: FETCH_POKEMONS,
+  type: types.FETCH_POKEMONS,
 });
 
 export const setFavorite = (pokemon) => ({
-  type: SET_FAVORITE,
+  type: types.SET_FAVORITE,
   payload: pokemon,
 });
 export const deleteFavorite = (id) => ({
-  type: DELETE_FAVORITE,
+  type: types.DELETE_FAVORITE,
   payload: id,
 });
 
 export const setError = () => ({
-  type: SET_ERROR,
+  type: types.SET_ERROR,
 });
