@@ -6,7 +6,7 @@ export const getLimitedPokemons = () => {
 };
 
 export const getPokemonById =(id) => {
-  return fetch(`${URL}pokemon/${id}`);
+   return fetch(`${URL}pokemon/${id}`);
 };
 
 export const getPokemonsDetails = async () => {
@@ -15,6 +15,7 @@ export const getPokemonsDetails = async () => {
     const { results: pkmns } = await res.json();
     const result = await Promise.all(pkmns.map((pkmn) => fetch(pkmn.url)));
     const pokemonsData = await Promise.all(result.map((pkmn) => pkmn.json()));
+    //console.log(pokemonsData)
     return pokemonsData
     //dispatch(setPokemon(pokemonsData));
   } catch (err) {

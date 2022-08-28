@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { Grid, Image, Label, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
 import { setFavorite, deleteFavorite } from "../../redux/actions";
@@ -19,9 +19,12 @@ const PokemonCard = (props) => {
       dispatch(setFavorite(pokemon));
     }
   };
+  const handleClick=()=>{
+    dispatch({type: "SET_POKEMON_ID", payload: pokemon.id})
+  }
   return (
     <Grid.Column mobile={16} tablet={8} computer={4}>
-      <div className='PokemonCard'>
+      <div className='PokemonCard' onClick={handleClick}>
         <button className='PokemonCard-favoriteButton' onClick={handleFavorite}>
           <Icon
             name='favorite'
