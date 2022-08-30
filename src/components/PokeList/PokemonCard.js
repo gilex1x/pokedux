@@ -1,12 +1,8 @@
 import React, { useEffect, useState } from "react";
-import { Grid, Image, Label, Icon } from "semantic-ui-react";
 import { useDispatch } from "react-redux";
+import { Grid, Image, Card, Typography } from "@mui/material";
 import { setFavorite, deleteFavorite } from "../../redux/actions";
-import {
-  MAIN_COLOR,
-  FAV_SELECTED_COLOR,
-  FAV_DEFAULT_COLOR,
-} from "../../utils/constants";
+
 const PokemonCard = (props) => {
   const dispatch = useDispatch();
   const { pokemon } = props;
@@ -19,34 +15,13 @@ const PokemonCard = (props) => {
       dispatch(setFavorite(pokemon));
     }
   };
-  const handleClick=()=>{
-    dispatch({type: "SET_POKEMON_ID", payload: pokemon.id})
-  }
+  const handleClick = () => {
+    dispatch({ type: "SET_POKEMON_ID", payload: pokemon.id });
+  };
   return (
-    <Grid.Column mobile={16} tablet={8} computer={4}>
-      <div className='PokemonCard' onClick={handleClick}>
-        <button className='PokemonCard-favoriteButton' onClick={handleFavorite}>
-          <Icon
-            name='favorite'
-            color={isFavorite ? FAV_SELECTED_COLOR : FAV_DEFAULT_COLOR}
-          />
-        </button>
-
-        <Image
-          centered
-          src={pokemon.sprites.front_default}
-          alt='Pokemon image'
-        />
-        <h3 className='PokemonCard-title'>{pokemon.name}</h3>
-        <>
-          {pokemon.types.map((type, index) => (
-            <Label key={index} color={MAIN_COLOR}>
-              {type.type.name}
-            </Label>
-          ))}
-        </>
-      </div>
-    </Grid.Column>
+    <Grid container>
+      <Typography variant='h3'>Name</Typography>
+    </Grid>
   );
 };
 
