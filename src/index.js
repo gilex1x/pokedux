@@ -1,7 +1,7 @@
 import React from "react";
 import ReactDOM from "react-dom";
 //Después se actualiza a redux toolkit
-import { createStore, compose, applyMiddleware } from "redux";
+import { createStore, applyMiddleware } from "redux";
 import {composeWithDevTools} from 'redux-devtools-extension'
 import createSagaMiddleware from "redux-saga";
 import { Provider } from "react-redux";

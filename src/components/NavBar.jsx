@@ -15,7 +15,7 @@ const NavBar = () => {
       }}
       container>
       <Grid item>
-        <img src={logo} width='50%' />
+        <img src={logo} width='50%' alt='logo-pokedux'/>
       </Grid>
       <Grid item>
         <SearchBar />

@@ -1,5 +1,6 @@
-import React, { useEffect, useState } from "react";
-import { useDispatch } from "react-redux";
+import React from "react";
+//import  { useEffect, useState } from "react";
+// import { useDispatch } from "react-redux";
 import {
   Grid,
   Card,
@@ -8,25 +9,25 @@ import {
   Button,
   Typography,
 } from "@mui/material";
-import { setFavorite, deleteFavorite } from "../redux/actions";
+//import { setFavorite, deleteFavorite } from "../redux/actions";
 
 const PokemonCard = ({ pokemon }) => {
-  const dispatch = useDispatch();
-  const [isFavorite, setIsFavorite] = useState(false);
-  const handleFavorite = () => {
-    setIsFavorite(!isFavorite);
-    if (isFavorite) {
-      dispatch(deleteFavorite(pokemon.id));
-    } else {
-      dispatch(setFavorite(pokemon));
-    }
-  };
-  const handleClick = () => {
-    dispatch({ type: "SET_POKEMON_ID", payload: pokemon.id });
-  };
-  useEffect(() => {
-    console.log(pokemon);
-  }, []);
+  // const dispatch = useDispatch();
+  // const [isFavorite, setIsFavorite] = useState(false);
+  // const handleFavorite = () => {
+  //   setIsFavorite(!isFavorite);
+  //   if (isFavorite) {
+  //     dispatch(deleteFavorite(pokemon.id));
+  //   } else {
+  //     dispatch(setFavorite(pokemon));
+  //   }
+  // };
+  // const handleClick = () => {
+  //   dispatch({ type: "SET_POKEMON_ID", payload: pokemon.id });
+  // };
+  // useEffect(() => {
+  //   console.log(pokemon);
+  // }, []);
   return (
     <Grid item xs={3}>
       <Card sx={{ border: "1px blakc", borderRadius: "20px" }}>
