@@ -1,10 +1,9 @@
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { fetchPokemons } from "../../redux/actions";
-import PokeList from "../../components/PokeList";
-import PokemonCard from "../../components/PokeList/PokemonCard";
-import Searcher from "../../components/Searcher";
-import Loader from "../../components/Loader";
+import ResultsContainer from "../../components/ResultsContainer.jsx";
+import PokemonCard from "../../components/PokemonCard";
+import Loader from "../../components/Loader.jsx";
 
 import "./styles.css";
 
@@ -21,11 +20,11 @@ const Home = () => {
   return (
     <div className='Home'>
       {!isLoading ? (
-        <PokeList>
+        <ResultsContainer>
           {pokemons.map((pokemon, index) => (
             <PokemonCard pokemon={pokemon} key={index} />
           ))}
-        </PokeList>
+        </ResultsContainer>
       ) : (
         <Loader />
       )}

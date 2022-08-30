@@ -3,7 +3,7 @@ import IconButton from "@mui/material/IconButton";
 import Menu from "@mui/material/Menu";
 import MenuItem from "@mui/material/MenuItem";
 import MoreVertIcon from "@mui/icons-material/MoreVert";
-import logo from "../../statics/images/logo_v4.svg";
+//import logo from "../../statics/images/logo_v4.svg";
 
 const ITEM_HEIGHT = 48;
 const options = [

@@ -1,21 +1,29 @@
 import React from "react";
-import { Box } from "@mui/material";
-import AsideMenu from "./Menu";
-import SearchBar from "./Searcher";
+import { Grid } from "@mui/material";
+import AsideMenu from "./AsideMenu.jsx";
+import SearchBar from "./Searcher.jsx";
 import logo from "../statics/images/logo_v4.svg";
 
 const NavBar = () => {
   return (
-    <Box
+    <Grid
       sx={{
         display: "flex ",
         justifyContent: "space-around",
         alignItems: "center",
-      }}>
-      <img src={logo} width='25%' />
-      <SearchBar />
-      <AsideMenu />
-    </Box>
+        padding: "8px",
+      }}
+      container>
+      <Grid item>
+        <img src={logo} width='50%' />
+      </Grid>
+      <Grid item>
+        <SearchBar />
+      </Grid>
+      <Grid item>
+        <AsideMenu />
+      </Grid>
+    </Grid>
   );
 };
 

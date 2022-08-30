@@ -1,10 +1,13 @@
 import React from "react";
-import PokeList from "../../components/PokeList";
+import ResultsContainer from "../../components/ResultsContainer";
 
 const Favorites = () => {
   return (
     <div>
-      <PokeList></PokeList>
+      <ResultsContainer>
+        <></>
+        <></>
+      </ResultsContainer>
     </div>
   );
 };
