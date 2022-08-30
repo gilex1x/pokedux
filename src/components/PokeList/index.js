@@ -5,7 +5,7 @@ import { Grid } from "@mui/material";
 const PokeList = (props) => {
   return (
     <Grid container textAlign='center'>
-      {props.children}
+      {props.children} 
     </Grid>
   );
 };

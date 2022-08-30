@@ -20,7 +20,6 @@ const Home = () => {
   }, []);
   return (
     <div className='Home'>
-      <Searcher />
       {!isLoading ? (
         <PokeList>
           {pokemons.map((pokemon, index) => (

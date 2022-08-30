@@ -1,13 +1,13 @@
-import React from 'react';
-import Menu from '../Menu';
-import './styles.css';
+import { Box } from "@mui/material";
+import React from "react";
+import NavBar from "../NavBar";
 
 const Layout = ({ children }) => {
   return (
-    <div>
-      <Menu />
-      <div className='Layout-content'>{children}</div>
-    </div>
+    <>
+      <NavBar />
+      <Box>{children}</Box>
+    </>
   );
 };
 
